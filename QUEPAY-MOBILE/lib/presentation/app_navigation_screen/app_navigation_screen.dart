@@ -11,10 +11,10 @@ class AppNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0XFFFFFFFF),
-        body: SizedBox(
+    return Scaffold(
+      backgroundColor: Color(0XFFFFFFFF),
+      body: SafeArea(
+        child: SizedBox(
           width: 375.h,
           child: Column(
             children: [

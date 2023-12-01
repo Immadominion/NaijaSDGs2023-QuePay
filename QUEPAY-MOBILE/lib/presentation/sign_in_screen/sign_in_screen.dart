@@ -25,77 +25,76 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: appTheme.blue50,
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(top: 53.v),
-                    child: Padding(
-                        padding: EdgeInsets.only(right: 51.h),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding: EdgeInsets.only(left: 24.h),
-                                  child: Text("lbl_sign_in".tr,
-                                      style: theme.textTheme.headlineLarge)),
-                              SizedBox(height: 8.v),
-                              Opacity(
-                                  opacity: 0.5,
-                                  child: Container(
-                                      width: 285.h,
-                                      margin: EdgeInsets.only(
-                                          left: 24.h, right: 69.h),
-                                      child: Text(
-                                          "msg_sign_into_your_account".tr,
-                                          maxLines: 3,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: CustomTextStyles
-                                              .titleLargeBlack90001Medium_1))),
-                              SizedBox(height: 7.v),
-                              _buildFourteen(context),
-                              SizedBox(height: 32.v),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: GestureDetector(
-                                      onTap: () {
-                                        onTapTxtDonthaveanaccount(context);
-                                      },
-                                      child: RichText(
-                                          text: TextSpan(children: [
-                                            TextSpan(
-                                                text:
-                                                    "msg_don_t_have_an_account2"
-                                                        .tr,
-                                                style: CustomTextStyles
-                                                    .titleLargeBlack90001SemiBold_1),
-                                            TextSpan(
-                                                text: "lbl_sign_up".tr,
-                                                style: CustomTextStyles
-                                                    .titleLargeIndigoA70001)
-                                          ]),
-                                          textAlign: TextAlign.left))),
-                              SizedBox(height: 134.v),
-                              Container(
-                                  height: 139.v,
-                                  width: 158.h,
-                                  decoration: BoxDecoration(
-                                      color: theme.colorScheme.errorContainer,
-                                      borderRadius: BorderRadius.circular(79.h),
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: theme
-                                                .colorScheme.errorContainer
-                                                .withOpacity(0.25),
-                                            spreadRadius: 2.h,
-                                            blurRadius: 2.h,
-                                            offset: Offset(15, 4))
-                                      ]))
-                            ]))))));
+    return Scaffold(
+        backgroundColor: appTheme.blue50,
+        resizeToAvoidBottomInset: false,
+        appBar: _buildAppBar(context),
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                  padding: EdgeInsets.only(top: 53.v),
+                  child: Padding(
+                      padding: EdgeInsets.only(right: 51.h),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(left: 24.h),
+                                child: Text("lbl_sign_in".tr,
+                                    style: theme.textTheme.headlineLarge)),
+                            SizedBox(height: 8.v),
+                            Opacity(
+                                opacity: 0.5,
+                                child: Container(
+                                    width: 285.h,
+                                    margin: EdgeInsets.only(
+                                        left: 24.h, right: 69.h),
+                                    child: Text("msg_sign_into_your_account".tr,
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: CustomTextStyles
+                                            .titleLargeBlack90001Medium_1))),
+                            SizedBox(height: 7.v),
+                            _buildFourteen(context),
+                            SizedBox(height: 32.v),
+                            Align(
+                                alignment: Alignment.center,
+                                child: GestureDetector(
+                                    onTap: () {
+                                      onTapTxtDonthaveanaccount(context);
+                                    },
+                                    child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              text: "msg_don_t_have_an_account2"
+                                                  .tr,
+                                              style: CustomTextStyles
+                                                  .titleLargeBlack90001SemiBold_1),
+                                          TextSpan(
+                                              text: "lbl_sign_up".tr,
+                                              style: CustomTextStyles
+                                                  .titleLargeIndigoA70001)
+                                        ]),
+                                        textAlign: TextAlign.left))),
+                            SizedBox(height: 134.v),
+                            Container(
+                                height: 139.v,
+                                width: 158.h,
+                                decoration: BoxDecoration(
+                                    color: theme.colorScheme.errorContainer,
+                                    borderRadius: BorderRadius.circular(79.h),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: theme
+                                              .colorScheme.errorContainer
+                                              .withOpacity(0.25),
+                                          spreadRadius: 2.h,
+                                          blurRadius: 2.h,
+                                          offset: Offset(15, 4))
+                                    ]))
+                          ])))),
+        ));
   }
 
   /// Section Widget

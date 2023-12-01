@@ -17,88 +17,89 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: appTheme.blue50,
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: Form(
-                key: _formKey,
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 24.h, vertical: 37.v),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("msg_reset_your_password".tr,
-                              style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 8.v),
-                          Opacity(
-                              opacity: 0.5,
-                              child: Container(
-                                  width: 309.h,
-                                  margin: EdgeInsets.only(right: 72.h),
-                                  child: Text("msg_provide_your_email".tr,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: CustomTextStyles
-                                          .titleLargeBlack90001Medium_1))),
-                          SizedBox(height: 71.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 25.h),
-                              child: Text("lbl_email".tr,
-                                  style: CustomTextStyles.bodyLargeBlack90001)),
-                          Padding(
-                              padding: EdgeInsets.only(left: 25.h, right: 26.h),
-                              child: CustomTextFormField(
-                                  controller: emailController,
-                                  hintText: "lbl_email_gmail_com".tr,
-                                  textInputAction: TextInputAction.done,
-                                  textInputType: TextInputType.emailAddress,
-                                  alignment: Alignment.center,
-                                  prefix: Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                          8.h, 14.v, 26.h, 14.v),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgEmailIcon,
-                                          height: 24.adaptSize,
-                                          width: 24.adaptSize)),
-                                  prefixConstraints:
-                                      BoxConstraints(maxHeight: 52.v))),
-                          Spacer(),
-                          CustomElevatedButton(
-                              text: "lbl_continue".tr,
-                              margin: EdgeInsets.only(left: 25.h, right: 26.h),
-                              buttonStyle: CustomButtonStyles.none,
-                              decoration: CustomButtonStyles
-                                  .gradientBlueToPrimaryTL10Decoration,
-                              onPressed: () {
-                                onTapContinue(context);
-                              },
-                              alignment: Alignment.center),
-                          SizedBox(height: 32.v),
-                          Align(
-                              alignment: Alignment.center,
-                              child: GestureDetector(
-                                  onTap: () {
-                                    onTapTxtRememberyourpassword(context);
-                                  },
-                                  child: RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                            text: "msg_remember_your_password2"
-                                                .tr,
-                                            style: CustomTextStyles
-                                                .titleLargeBlack90001SemiBold_1),
-                                        TextSpan(
-                                            text: "lbl_sign_in".tr,
-                                            style: CustomTextStyles
-                                                .titleLargeIndigoA70001)
-                                      ]),
-                                      textAlign: TextAlign.left))),
-                          SizedBox(height: 39.v)
-                        ])))));
+    return Scaffold(
+        backgroundColor: appTheme.blue50,
+        resizeToAvoidBottomInset: false,
+        appBar: _buildAppBar(context),
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: Container(
+                  width: double.maxFinite,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24.h, vertical: 37.v),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("msg_reset_your_password".tr,
+                            style: theme.textTheme.headlineLarge),
+                        SizedBox(height: 8.v),
+                        Opacity(
+                            opacity: 0.5,
+                            child: Container(
+                                width: 309.h,
+                                margin: EdgeInsets.only(right: 72.h),
+                                child: Text("msg_provide_your_email".tr,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: CustomTextStyles
+                                        .titleLargeBlack90001Medium_1))),
+                        SizedBox(height: 71.v),
+                        Padding(
+                            padding: EdgeInsets.only(left: 25.h),
+                            child: Text("lbl_email".tr,
+                                style: CustomTextStyles.bodyLargeBlack90001)),
+                        Padding(
+                            padding: EdgeInsets.only(left: 25.h, right: 26.h),
+                            child: CustomTextFormField(
+                                controller: emailController,
+                                hintText: "lbl_email_gmail_com".tr,
+                                textInputAction: TextInputAction.done,
+                                textInputType: TextInputType.emailAddress,
+                                alignment: Alignment.center,
+                                prefix: Container(
+                                    margin: EdgeInsets.fromLTRB(
+                                        8.h, 14.v, 26.h, 14.v),
+                                    child: CustomImageView(
+                                        imagePath: ImageConstant.imgEmailIcon,
+                                        height: 24.adaptSize,
+                                        width: 24.adaptSize)),
+                                prefixConstraints:
+                                    BoxConstraints(maxHeight: 52.v))),
+                        Spacer(),
+                        CustomElevatedButton(
+                            text: "lbl_continue".tr,
+                            margin: EdgeInsets.only(left: 25.h, right: 26.h),
+                            buttonStyle: CustomButtonStyles.none,
+                            decoration: CustomButtonStyles
+                                .gradientBlueToPrimaryTL10Decoration,
+                            onPressed: () {
+                              onTapContinue(context);
+                            },
+                            alignment: Alignment.center),
+                        SizedBox(height: 32.v),
+                        Align(
+                            alignment: Alignment.center,
+                            child: GestureDetector(
+                                onTap: () {
+                                  onTapTxtRememberyourpassword(context);
+                                },
+                                child: RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                          text:
+                                              "msg_remember_your_password2".tr,
+                                          style: CustomTextStyles
+                                              .titleLargeBlack90001SemiBold_1),
+                                      TextSpan(
+                                          text: "lbl_sign_in".tr,
+                                          style: CustomTextStyles
+                                              .titleLargeIndigoA70001)
+                                    ]),
+                                    textAlign: TextAlign.left))),
+                        SizedBox(height: 39.v)
+                      ]))),
+        ));
   }
 
   /// Section Widget

@@ -26,162 +26,161 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: appTheme.blue50,
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(top: 51.v),
-                    child: Padding(
-                        padding: EdgeInsets.only(right: 52.h, bottom: 5.v),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding: EdgeInsets.only(left: 24.h),
-                                  child: Text("msg_create_your_account".tr,
-                                      style: theme.textTheme.headlineLarge)),
-                              SizedBox(height: 8.v),
-                              Opacity(
-                                  opacity: 0.5,
-                                  child: Container(
-                                      width: 313.h,
-                                      margin: EdgeInsets.only(
-                                          left: 24.h, right: 40.h),
-                                      child: Text("msg_please_provide_a".tr,
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: CustomTextStyles
-                                              .titleLargeBlack90001Medium_1))),
-                              SizedBox(height: 7.v),
-                              Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 23.h, vertical: 22.v),
-                                  decoration: AppDecoration.outlineBlack
-                                      .copyWith(
-                                          borderRadius: BorderRadiusStyle
-                                              .customBorderLR10),
-                                  child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 3.h),
-                                                child: Text("lbl_full_name".tr,
-                                                    style: theme
-                                                        .textTheme.bodyLarge))),
-                                        _buildUser(context),
-                                        SizedBox(height: 16.v),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 3.h),
-                                                child: Text("lbl_email".tr,
-                                                    style: theme
-                                                        .textTheme.bodyLarge))),
-                                        _buildEmail(context),
-                                        SizedBox(height: 17.v),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 3.h),
-                                                child: Text("lbl_phone".tr,
-                                                    style: theme
-                                                        .textTheme.bodyLarge))),
-                                        Container(
-                                            margin: EdgeInsets.only(left: 3.h),
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 6.h, vertical: 4.v),
-                                            decoration: AppDecoration
-                                                .fillOnErrorContainer,
-                                            child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                      padding: EdgeInsets.only(
-                                                          top: 11.v,
-                                                          bottom: 10.v),
-                                                      child: Text(
-                                                          "lbl_ng_234".tr,
-                                                          style: CustomTextStyles
-                                                              .titleMediumBlack90001)),
-                                                  CustomImageView(
-                                                      imagePath: ImageConstant
-                                                          .imgFrame1,
-                                                      height: 8.v,
-                                                      width: 15.h,
-                                                      margin: EdgeInsets.only(
-                                                          left: 19.h,
-                                                          top: 18.v,
-                                                          bottom: 17.v)),
-                                                  Padding(
-                                                      padding: EdgeInsets.only(
-                                                          left: 7.h),
-                                                      child: SizedBox(
-                                                          height: 44.v,
-                                                          child: VerticalDivider(
-                                                              width: 2.h,
-                                                              thickness: 2.v,
-                                                              color: appTheme
-                                                                  .blueGray100))),
-                                                  _buildPhonenumber(context)
-                                                ])),
-                                        SizedBox(height: 17.v),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 3.h),
-                                                child: Text("lbl_password".tr,
-                                                    style: theme
-                                                        .textTheme.bodyLarge))),
-                                        _buildPassword(context),
-                                        SizedBox(height: 18.v),
-                                        Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 3.h),
-                                                child: Text(
-                                                    "msg_re_type_password".tr,
-                                                    style: theme
-                                                        .textTheme.bodyLarge))),
-                                        _buildPassword1(context),
-                                        SizedBox(height: 37.v),
-                                        _buildCreateAccount(context),
-                                        SizedBox(height: 9.v)
-                                      ])),
-                              SizedBox(height: 24.v),
-                              Align(
-                                  alignment: Alignment.centerRight,
-                                  child: GestureDetector(
-                                      onTap: () {
-                                        onTapTxtAlreadyhavean(context);
-                                      },
-                                      child: Padding(
-                                          padding: EdgeInsets.only(right: 18.h),
-                                          child: RichText(
-                                              text: TextSpan(children: [
-                                                TextSpan(
-                                                    text: "msg_already_have_an2"
-                                                        .tr,
-                                                    style: CustomTextStyles
-                                                        .titleLargeBlack90001SemiBold_1),
-                                                TextSpan(
-                                                    text: "lbl_sign_in".tr,
-                                                    style: CustomTextStyles
-                                                        .titleLargeIndigoA70001)
-                                              ]),
-                                              textAlign: TextAlign.left))))
-                            ]))))));
+    return Scaffold(
+        backgroundColor: appTheme.blue50,
+        resizeToAvoidBottomInset: false,
+        appBar: _buildAppBar(context),
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                  padding: EdgeInsets.only(top: 51.v),
+                  child: Padding(
+                      padding: EdgeInsets.only(right: 52.h, bottom: 5.v),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(left: 24.h),
+                                child: Text("msg_create_your_account".tr,
+                                    style: theme.textTheme.headlineLarge)),
+                            SizedBox(height: 8.v),
+                            Opacity(
+                                opacity: 0.5,
+                                child: Container(
+                                    width: 313.h,
+                                    margin: EdgeInsets.only(
+                                        left: 24.h, right: 40.h),
+                                    child: Text("msg_please_provide_a".tr,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: CustomTextStyles
+                                            .titleLargeBlack90001Medium_1))),
+                            SizedBox(height: 7.v),
+                            Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 23.h, vertical: 22.v),
+                                decoration: AppDecoration.outlineBlack.copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.customBorderLR10),
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 3.h),
+                                              child: Text("lbl_full_name".tr,
+                                                  style: theme
+                                                      .textTheme.bodyLarge))),
+                                      _buildUser(context),
+                                      SizedBox(height: 16.v),
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 3.h),
+                                              child: Text("lbl_email".tr,
+                                                  style: theme
+                                                      .textTheme.bodyLarge))),
+                                      _buildEmail(context),
+                                      SizedBox(height: 17.v),
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 3.h),
+                                              child: Text("lbl_phone".tr,
+                                                  style: theme
+                                                      .textTheme.bodyLarge))),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 3.h),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 6.h, vertical: 4.v),
+                                          decoration: AppDecoration
+                                              .fillOnErrorContainer,
+                                          child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        top: 11.v,
+                                                        bottom: 10.v),
+                                                    child: Text("lbl_ng_234".tr,
+                                                        style: CustomTextStyles
+                                                            .titleMediumBlack90001)),
+                                                CustomImageView(
+                                                    imagePath:
+                                                        ImageConstant.imgFrame1,
+                                                    height: 8.v,
+                                                    width: 15.h,
+                                                    margin: EdgeInsets.only(
+                                                        left: 19.h,
+                                                        top: 18.v,
+                                                        bottom: 17.v)),
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 7.h),
+                                                    child: SizedBox(
+                                                        height: 44.v,
+                                                        child: VerticalDivider(
+                                                            width: 2.h,
+                                                            thickness: 2.v,
+                                                            color: appTheme
+                                                                .blueGray100))),
+                                                _buildPhonenumber(context)
+                                              ])),
+                                      SizedBox(height: 17.v),
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 3.h),
+                                              child: Text("lbl_password".tr,
+                                                  style: theme
+                                                      .textTheme.bodyLarge))),
+                                      _buildPassword(context),
+                                      SizedBox(height: 18.v),
+                                      Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 3.h),
+                                              child: Text(
+                                                  "msg_re_type_password".tr,
+                                                  style: theme
+                                                      .textTheme.bodyLarge))),
+                                      _buildPassword1(context),
+                                      SizedBox(height: 37.v),
+                                      _buildCreateAccount(context),
+                                      SizedBox(height: 9.v)
+                                    ])),
+                            SizedBox(height: 24.v),
+                            Align(
+                                alignment: Alignment.centerRight,
+                                child: GestureDetector(
+                                    onTap: () {
+                                      onTapTxtAlreadyhavean(context);
+                                    },
+                                    child: Padding(
+                                        padding: EdgeInsets.only(right: 18.h),
+                                        child: RichText(
+                                            text: TextSpan(children: [
+                                              TextSpan(
+                                                  text:
+                                                      "msg_already_have_an2".tr,
+                                                  style: CustomTextStyles
+                                                      .titleLargeBlack90001SemiBold_1),
+                                              TextSpan(
+                                                  text: "lbl_sign_in".tr,
+                                                  style: CustomTextStyles
+                                                      .titleLargeIndigoA70001)
+                                            ]),
+                                            textAlign: TextAlign.left))))
+                          ])))),
+        ));
   }
 
   /// Section Widget

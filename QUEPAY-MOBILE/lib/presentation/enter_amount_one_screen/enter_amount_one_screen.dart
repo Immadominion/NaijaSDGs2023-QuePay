@@ -10,36 +10,35 @@ class EnterAmountOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1),
-            body: Container(
-                width: double.maxFinite,
-                padding:
-                    EdgeInsets.symmetric(horizontal: 24.h, vertical: 216.v),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          height: 107.adaptSize,
-                          width: 107.adaptSize,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 33.h, vertical: 34.v),
-                          decoration: AppDecoration.fillIndigoA.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder53),
-                          child: CustomImageView(
-                              imagePath:
-                                  ImageConstant.imgVectorOnerrorcontainer,
-                              height: 37.v,
-                              width: 40.h,
-                              alignment: Alignment.topCenter)),
-                      SizedBox(height: 21.v),
-                      Text("msg_transfer_successful".tr,
-                          style: CustomTextStyles.headlineLargeBlack90001),
-                      Spacer(),
-                      SizedBox(height: 44.v),
-                      _buildShareReceipt(context)
-                    ]))));
+    return Scaffold(
+        backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1),
+        body: SafeArea(
+          child: Container(
+              width: double.maxFinite,
+              padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 216.v),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        height: 107.adaptSize,
+                        width: 107.adaptSize,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 33.h, vertical: 34.v),
+                        decoration: AppDecoration.fillIndigoA.copyWith(
+                            borderRadius: BorderRadiusStyle.roundedBorder53),
+                        child: CustomImageView(
+                            imagePath: ImageConstant.imgVectorOnerrorcontainer,
+                            height: 37.v,
+                            width: 40.h,
+                            alignment: Alignment.topCenter)),
+                    SizedBox(height: 21.v),
+                    Text("msg_transfer_successful".tr,
+                        style: CustomTextStyles.headlineLargeBlack90001),
+                    Spacer(),
+                    SizedBox(height: 44.v),
+                    _buildShareReceipt(context)
+                  ])),
+        ));
   }
 
   /// Section Widget

@@ -14,16 +14,17 @@ class HomeContainerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            body: Navigator(
-                key: navigatorKey,
-                initialRoute: AppRoutes.homePage,
-                onGenerateRoute: (routeSetting) => PageRouteBuilder(
-                    pageBuilder: (ctx, ani, ani1) =>
-                        getCurrentPage(routeSetting.name!),
-                    transitionDuration: Duration(seconds: 0))),
-            bottomNavigationBar: _buildBottomBar(context)));
+    return Scaffold(
+        body: SafeArea(
+          child: Navigator(
+              key: navigatorKey,
+              initialRoute: AppRoutes.homePage,
+              onGenerateRoute: (routeSetting) => PageRouteBuilder(
+                  pageBuilder: (ctx, ani, ani1) =>
+                      getCurrentPage(routeSetting.name!),
+                  transitionDuration: Duration(seconds: 0))),
+        ),
+        bottomNavigationBar: _buildBottomBar(context));
   }
 
   /// Section Widget

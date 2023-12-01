@@ -12,12 +12,12 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return SafeArea(
-      child: Scaffold(
-        extendBody: true,
-        extendBodyBehindAppBar: true,
-        backgroundColor: theme.colorScheme.primaryContainer,
-        body: Container(
+    return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      backgroundColor: theme.colorScheme.primaryContainer,
+      body: SafeArea(
+        child: Container(
           width: mediaQueryData.size.width,
           height: mediaQueryData.size.height,
           decoration: BoxDecoration(
@@ -45,12 +45,9 @@ class SplashScreen extends StatelessWidget {
                       width: 72.h,
                       margin: EdgeInsets.only(bottom: 29.v),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 8.v),
-                      child: Text(
-                        "lbl_uepay".tr,
-                        style: CustomTextStyles.latoOnErrorContainer,
-                      ),
+                    Text(
+                      "lbl_uepay".tr,
+                      style: CustomTextStyles.latoOnErrorContainer,
                     ),
                   ],
                 ),

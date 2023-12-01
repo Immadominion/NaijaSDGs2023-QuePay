@@ -12,12 +12,12 @@ class ThSplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return SafeArea(
-      child: Scaffold(
-        extendBody: true,
-        extendBodyBehindAppBar: true,
-        backgroundColor: theme.colorScheme.primaryContainer,
-        body: Container(
+    return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      backgroundColor: theme.colorScheme.primaryContainer,
+      body: SafeArea(
+        child: Container(
           width: mediaQueryData.size.width,
           height: mediaQueryData.size.height,
           decoration: BoxDecoration(

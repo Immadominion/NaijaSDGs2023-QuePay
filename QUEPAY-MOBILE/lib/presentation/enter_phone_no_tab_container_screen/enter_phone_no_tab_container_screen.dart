@@ -30,18 +30,19 @@ class EnterPhoneNoTabContainerScreenState
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            appBar: _buildAppBar(context),
-            body: Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 29.v),
-                child: Column(children: [
-                  SizedBox(height: 21.v),
-                  _buildFour(context),
-                  SizedBox(height: 45.v),
-                  _buildInformations(context)
-                ]))));
+    return Scaffold(
+        appBar: _buildAppBar(context),
+        body: SafeArea(
+          child: Container(
+              width: double.maxFinite,
+              padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 29.v),
+              child: Column(children: [
+                SizedBox(height: 21.v),
+                _buildFour(context),
+                SizedBox(height: 45.v),
+                _buildInformations(context)
+              ])),
+        ));
   }
 
   /// Section Widget

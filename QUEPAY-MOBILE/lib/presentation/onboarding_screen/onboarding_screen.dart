@@ -10,38 +10,39 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1),
-            body: SizedBox(
-                width: double.maxFinite,
-                child: Column(children: [
-                  _buildTwentyTwo(context),
-                  SizedBox(height: 85.v),
-                  Text("lbl_welcome".tr, style: theme.textTheme.displayMedium),
-                  SizedBox(height: 86.v),
-                  CustomElevatedButton(
-                      height: 60.v,
-                      text: "lbl_create_account".tr,
-                      margin: EdgeInsets.symmetric(horizontal: 24.h),
-                      buttonStyle: CustomButtonStyles.none,
-                      decoration:
-                          CustomButtonStyles.gradientBlueToPrimaryDecoration,
-                      buttonTextStyle: CustomTextStyles.headlineSmallWhiteA700,
-                      onPressed: () {
-                        onTapCreateAccount(context);
-                      }),
-                  SizedBox(height: 28.v),
-                  CustomOutlinedButton(
-                      height: 60.v,
-                      text: "lbl_sign_in".tr,
-                      margin: EdgeInsets.symmetric(horizontal: 24.h),
-                      onPressed: () {
-                        onTapSignIn(context);
-                      }),
-                  SizedBox(height: 73.v),
-                  _buildTwo(context)
-                ]))));
+    return Scaffold(
+        backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1),
+        body: SafeArea(
+          child: SizedBox(
+              width: double.maxFinite,
+              child: Column(children: [
+                _buildTwentyTwo(context),
+                SizedBox(height: 85.v),
+                Text("lbl_welcome".tr, style: theme.textTheme.displayMedium),
+                SizedBox(height: 86.v),
+                CustomElevatedButton(
+                    height: 60.v,
+                    text: "lbl_create_account".tr,
+                    margin: EdgeInsets.symmetric(horizontal: 24.h),
+                    buttonStyle: CustomButtonStyles.none,
+                    decoration:
+                        CustomButtonStyles.gradientBlueToPrimaryDecoration,
+                    buttonTextStyle: CustomTextStyles.headlineSmallWhiteA700,
+                    onPressed: () {
+                      onTapCreateAccount(context);
+                    }),
+                SizedBox(height: 28.v),
+                CustomOutlinedButton(
+                    height: 60.v,
+                    text: "lbl_sign_in".tr,
+                    margin: EdgeInsets.symmetric(horizontal: 24.h),
+                    onPressed: () {
+                      onTapSignIn(context);
+                    }),
+                SizedBox(height: 73.v),
+                _buildTwo(context)
+              ])),
+        ));
   }
 
   /// Section Widget

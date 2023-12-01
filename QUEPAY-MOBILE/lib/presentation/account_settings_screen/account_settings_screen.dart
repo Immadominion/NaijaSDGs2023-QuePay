@@ -21,10 +21,10 @@ class AccountSettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return SafeArea(
-      child: Scaffold(
-        appBar: _buildAppBar(context),
-        body: SizedBox(
+    return Scaffold(
+      appBar: _buildAppBar(context),
+      body: SafeArea(
+        child: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
             child: Padding(
@@ -55,8 +55,8 @@ class AccountSettingsScreen extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: _buildBottomBar(context),
       ),
+      bottomNavigationBar: _buildBottomBar(context),
     );
   }
 

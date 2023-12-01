@@ -20,53 +20,54 @@ class PasswordResetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(top: 51.v),
-                    child: Padding(
-                        padding: EdgeInsets.only(right: 50.h),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding: EdgeInsets.only(left: 24.h),
-                                  child: Text("msg_set_new_password".tr,
-                                      style: theme.textTheme.headlineLarge)),
-                              SizedBox(height: 72.v),
-                              _buildOne(context),
-                              SizedBox(height: 111.v),
-                              CustomElevatedButton(
-                                  text: "lbl_continue".tr,
-                                  margin: EdgeInsets.only(left: 49.h),
-                                  buttonStyle: CustomButtonStyles.none,
-                                  decoration: CustomButtonStyles
-                                      .gradientBlueToOnErrorDecoration,
-                                  onPressed: () {
-                                    onTapContinue(context);
-                                  },
-                                  alignment: Alignment.centerRight),
-                              SizedBox(height: 181.v),
-                              Container(
-                                  height: 139.v,
-                                  width: 158.h,
-                                  decoration: BoxDecoration(
-                                      color: theme.colorScheme.errorContainer,
-                                      borderRadius: BorderRadius.circular(79.h),
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: theme
-                                                .colorScheme.errorContainer
-                                                .withOpacity(0.25),
-                                            spreadRadius: 2.h,
-                                            blurRadius: 2.h,
-                                            offset: Offset(15, 4))
-                                      ]))
-                            ]))))));
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: _buildAppBar(context),
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                  padding: EdgeInsets.only(top: 51.v),
+                  child: Padding(
+                      padding: EdgeInsets.only(right: 50.h),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(left: 24.h),
+                                child: Text("msg_set_new_password".tr,
+                                    style: theme.textTheme.headlineLarge)),
+                            SizedBox(height: 72.v),
+                            _buildOne(context),
+                            SizedBox(height: 111.v),
+                            CustomElevatedButton(
+                                text: "lbl_continue".tr,
+                                margin: EdgeInsets.only(left: 49.h),
+                                buttonStyle: CustomButtonStyles.none,
+                                decoration: CustomButtonStyles
+                                    .gradientBlueToOnErrorDecoration,
+                                onPressed: () {
+                                  onTapContinue(context);
+                                },
+                                alignment: Alignment.centerRight),
+                            SizedBox(height: 181.v),
+                            Container(
+                                height: 139.v,
+                                width: 158.h,
+                                decoration: BoxDecoration(
+                                    color: theme.colorScheme.errorContainer,
+                                    borderRadius: BorderRadius.circular(79.h),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: theme
+                                              .colorScheme.errorContainer
+                                              .withOpacity(0.25),
+                                          spreadRadius: 2.h,
+                                          blurRadius: 2.h,
+                                          offset: Offset(15, 4))
+                                    ]))
+                          ])))),
+        ));
   }
 
   /// Section Widget
